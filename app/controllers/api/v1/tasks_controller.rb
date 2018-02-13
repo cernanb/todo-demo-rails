@@ -16,6 +16,7 @@ class Api::V1::TasksController < ApplicationController
     if @task.update(task_params)
       render json: @task
     end
+  end
 
 
   private
