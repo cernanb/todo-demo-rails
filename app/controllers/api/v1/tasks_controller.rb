@@ -17,6 +17,13 @@ class Api::V1::TasksController < ApplicationController
       render json: @task
     end
   end
+  
+  def destroy
+    @task = Task.find(params[:id])
+
+    @task.destroy
+    render json: @task.id
+  end
 
 
   private
