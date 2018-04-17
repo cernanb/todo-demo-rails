@@ -1,11 +1,11 @@
 class Api::V1::UsersController < ApplicationController
-  def create 
+  def create
     @user = User.new(user_params)
 
     if @user.save
       #do something
       token = Auth.encode(@user.id)
-      render json: token
+      render json: { token: token}
     else
       #do someting else
     end
