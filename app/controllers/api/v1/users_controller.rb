@@ -5,7 +5,8 @@ class Api::V1::UsersController < ApplicationController
     if @user.save
       #do something
       token = Auth.encode(@user.id)
-      render json: { token: token}
+      # render json: { token: token, user: }
+      render "users/user_with_token.json.jbuilder", user: @user
     else
       #do someting else
     end
