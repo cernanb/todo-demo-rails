@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :tasks, only: [:index, :create, :update, :destroy]
       resources :users, only: [:create]
+      post '/login', to: 'sessions#login'
     end
   end
 end
